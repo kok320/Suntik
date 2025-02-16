@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .section-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+    <script>
+        function pesanSekarang(jenis, platform) {
+            var paket = document.getElementById(jenis + "-" + platform).value;
+            var nomorWhatsapp = "62819066556890";
+            var harga = {
+                "100": "Rp 10.000",
+                "200": "Rp 20.000",
+                "300": "Rp 30.000",
+                "400": "Rp 40.000",
+                "500": "Rp 50.000",
+                "1000": "Rp 100.000"
+            };
+            var pesan = `Saya ingin memesan ${jenis} ${platform} sebanyak ${paket} dengan harga ${harga[paket]}`;
+            var url = `https://wa.me/${nomorWhatsapp}?text=${encodeURIComponent(pesan)}`;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pesanan</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="layanan.html">Layanan</a></li>
+                <li><a href="pesanan.html">Pesanan</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section-container">
+            <h2>Pilih Paket Follower Instagram</h2>
+            <label for="follower-instagram">Pilih paket:</label>
+            <select id="follower-instagram">
+                <option value="100">100 - Rp 10.000</option>
+                <option value="200">200 - Rp 20.000</option>
+                <option value="300">300 - Rp 30.000</option>
+                <option value="400">400 - Rp 40.000</option>
+                <option value="500">500 - Rp 50.000</option>
+                <option value="1000">1000 - Rp 100.000</option>
+            </select>
+            <button onclick="pesanSekarang('follower', 'instagram')">Pesan Sekarang</button>
+        </section>
+        
+        <section class="section-container">
+            <h2>Pilih Paket Follower TikTok</h2>
+            <label for="follower-tiktok">Pilih paket:</label>
+            <select id="follower-tiktok">
+                <option value="100">100 - Rp 10.000</option>
+                <option value="200">200 - Rp 20.000</option>
+                <option value="300">300 - Rp 30.000</option>
+                <option value="400">400 - Rp 40.000</option>
+                <option value="500">500 - Rp 50.000</option>
+                <option value="1000">1000 - Rp 100.000</option>
+            </select>
+            <button onclick="pesanSekarang('follower', 'tiktok')">Pesan Sekarang</button>
+        </section>
+        
+        <section class="section-container">
+            <h2>Pilih Paket Follower Facebook</h2>
+            <label for="follower-facebook">Pilih paket:</label>
+            <select id="follower-facebook">
+                <option value="100">100 - Rp 10.000</option>
+                <option value="200">200 - Rp 20.000</option>
+                <option value="300">300 - Rp 30.000</option>
+                <option value="400">400 - Rp 40.000</option>
+                <option value="500">500 - Rp 50.000</option>
+                <option value="1000">1000 - Rp 100.000</option>
+            </select>
+            <button onclick="pesanSekarang('follower', 'facebook')">Pesan Sekarang</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Suntik Follower. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
